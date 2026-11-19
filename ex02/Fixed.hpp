@@ -20,12 +20,20 @@ class Fixed {
         Fixed operator-(const Fixed& source);
         Fixed operator*(const Fixed& source);
         Fixed operator/(const Fixed& source);
-        bool operator<(const Fixed& source);
-        bool operator>(const Fixed& source);
-        bool operator>=(const Fixed& source);
-        bool operator<=(const Fixed& source);
-        bool operator==(const Fixed& source);
-        bool operator!=(const Fixed& source);
+        bool operator<(const Fixed& source) const;
+        bool operator>(const Fixed& source) const;
+        bool operator>=(const Fixed& source) const;
+        bool operator<=(const Fixed& source) const;
+        bool operator==(const Fixed& source) const;
+        bool operator!=(const Fixed& source) const;
+        Fixed &operator++(void);
+        Fixed operator++(int);
+        Fixed &operator--(void);
+        Fixed operator--(int);
+        static Fixed &min(Fixed &a, Fixed &b);
+        static const Fixed &min(const Fixed &a, const Fixed &b);
+        static Fixed &max(Fixed &a, Fixed &b);
+        static const Fixed &max(const Fixed &a, const Fixed &b);
         ~Fixed();
 
         int getRawBits( void ) const;
